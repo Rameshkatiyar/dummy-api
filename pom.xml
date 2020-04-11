@@ -14,32 +14,17 @@
         <version>2.0.5.RELEASE</version>
     </parent>
 
-    <properties>
-        <lombok.version>1.16.16</lombok.version>
-    </properties>
-
     <dependencies>
         <!--Spring Web Start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--Spring tech-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!--Thymeleaf UI-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
         <!--Lombok Plugin-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <version>1.16.16</version>
         </dependency>
     </dependencies>
 
