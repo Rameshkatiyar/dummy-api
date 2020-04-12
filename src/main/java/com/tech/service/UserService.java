@@ -13,6 +13,7 @@ public class UserService {
                 .userId("123")
                 .firstName("Ramesh")
                 .lastName("Katiyar")
+                .accountNumbers(new int[]{123,456,789})
                 .build();
     }
 }

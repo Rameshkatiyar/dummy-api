@@ -13,4 +13,5 @@ public class UserDetails {
     String userId;
     String firstName;
     String lastName;
+    int[] accountNumbers;
 }
