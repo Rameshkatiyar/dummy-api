@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tech.model.UserDetails;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
@@ -136,6 +137,26 @@ public class UserDetailsAPITest {
                 .header("Cookie", session)
                 .contentType(ContentType.JSON)
                 .post("/user");
+    }
+
+    /**
+     * Use of JSON PATH
+     * It's nothing much but a way of extracting values from JSON.
+     */
+    @Test
+    public void checkJSONPathFeature(){
+        String jsonString = RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .get("/user")
+                .then()
+                .extract()
+                .asString();
+
+
+        JsonPath jsonPath = new JsonPath(jsonString);
+
+        Assert.assertEquals(jsonPath.getString("firstName"), "Ramesh");
     }
 
     private String objectToJson(Object object){
